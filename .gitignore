@@ -1,0 +1,30 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.codex/
+
+# Logs
+*.log
+
+# JavaScript dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+labs/**/capps/generated/
+
+# Temporary files
+tmp/
+temp/
+
+# Progress tracking (personal to each user)
+PROGRESS.md
+
+# kube configs or secrets should not be committed
+kubeconfig
+*.kubeconfig
+.env

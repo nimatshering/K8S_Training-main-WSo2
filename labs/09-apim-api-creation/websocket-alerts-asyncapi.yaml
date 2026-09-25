@@ -1,0 +1,35 @@
+asyncapi: 2.6.0
+info:
+  title: Government Public Alerts WebSocket API
+  version: 1.0.0
+  description: Demo WebSocket API for public service alerts used in the Minikube WSO2 APIM lab.
+servers:
+  localGateway:
+    url: gw.wso2.com:8243/gov/alerts/1.0.0/ws
+    protocol: wss
+channels:
+  /ws:
+    publish:
+      summary: Send a client message to the alerts service
+      message:
+        name: ClientMessage
+        payload:
+          type: string
+          example: hello from APIM
+    subscribe:
+      summary: Receive an alert acknowledgement
+      message:
+        name: AlertAcknowledgement
+        payload:
+          type: object
+          properties:
+            type:
+              type: string
+              example: government.alert.ack
+            received:
+              type: string
+              example: hello from APIM
+            latestAlert:
+              type: object
+            timestamp:
+              type: string
